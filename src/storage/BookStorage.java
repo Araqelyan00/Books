@@ -46,5 +46,14 @@ public class BookStorage {
         }
     }
 
+    public void printAllBooks(){
+        for(int i = 0; i < size; i++){
+            System.out.println(books[i]);
+        }
+        System.out.println();
+    }
+
+
+
 
 }

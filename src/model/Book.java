@@ -4,12 +4,18 @@ public class Book {
     private String title;
     private Author author;
     private double price;
+    private int count;
     private String genre;
 
-    public Book(String title, Author author, double price, String genre) {
+    public Book() {
+
+    }
+
+    public Book(String title, Author author, double price,int count, String genre) {
         this.title = title;
         this.author = author;
         this.price = price;
+        this.count = count;
         this.genre = genre;
     }
 
@@ -45,12 +51,21 @@ public class Book {
         this.genre = genre;
     }
 
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
+
     @Override
     public String toString() {
         return "Book{" +
                 "title='" + title + '\'' +
                 ", author=" + author +
                 ", price=" + price +
+                ", count=" + count +
                 ", genre='" + genre + '\'' +
                 '}';
     }
