@@ -62,7 +62,7 @@ public class Demo implements Menu {
                         addBook();
                         break;
                     case PRINT_ALL_BOOKS:
-                        bookStorage.printAllBooks();
+                        printAllBooks();
                         break;
                     case PRINT_BOOKS_BY_AUTHOR_NAME:
                         printBooksByAuthorName();
@@ -136,8 +136,10 @@ public class Demo implements Menu {
         Author Sevak = new Author("Paruyr", "Sevak", "sevak@gmail.com", "MALE", registeredUser);
         authorStorage.add(Sevak);
 
-        bookStorage.add(new Book("Java", Shield, 5000, 100, "Technical"));
-        bookStorage.add(new Book("Sirum em qez", Sevak, 6000, 10, "Classical"));
+        Book book1 = new Book("Java", Shield, 5000, 100, "Technical");
+        bookStorage.add(book1);
+        Book book2 = new Book("Sirum em qez", Sevak, 6000, 10, "Classical");
+        bookStorage.add(book2);
 
         User admin = new User("Admin", "Adminyan", "admin@gmail.com", "admin", Role.ADMIN);
         userStorage.add(admin);
@@ -182,7 +184,7 @@ public class Demo implements Menu {
                     run = false;
                     break;
                 case PRINT_ALL_BOOKS:
-                    bookStorage.printAllBooks();
+                    printAllBooks();
                     break;
                 case PRINT_BOOKS_BY_AUTHOR_NAME:
                     printBooksByAuthorName();
@@ -234,7 +236,7 @@ public class Demo implements Menu {
                     addBook();
                     break;
                 case PRINT_ALL_BOOKS:
-                    bookStorage.printAllBooks();
+                    printAllBooks();
                     break;
                 case PRINT_BOOKS_BY_AUTHOR_NAME:
                     printBooksByAuthorName();
@@ -291,7 +293,7 @@ public class Demo implements Menu {
             System.out.println("Input book's author index");
             int authorIndex = Integer.parseInt(scanner.nextLine());
             System.out.println("Input book's price :");
-            double price = scanner.nextDouble();
+            double price = Double.parseDouble(scanner.nextLine());
             System.out.println("Input book's count :");
             int count = Integer.parseInt(scanner.nextLine());
             System.out.println("Input book's genre :");
@@ -299,9 +301,9 @@ public class Demo implements Menu {
 
             Book book = new Book(bookName, authorStorage.getAuthorByIndex(authorIndex), price, count, genre);
             bookStorage.add(book);
-            System.out.println("Book added successfully.");
+            System.out.println("Book added successfully.\n");
         }catch (IllegalArgumentException e){
-            System.out.println("Input numbers only !!");
+            System.out.println("Input numbers only !!\n");
         }
     }
     private static void addAuthor() throws AuthorNotFoundException {
@@ -347,7 +349,7 @@ public class Demo implements Menu {
         userStorage.printUsers();
     }
     public static void printAllBooks() {
-        bookStorage.printAllBooks();
+        bookStorage.printBooks();
     }
 
 

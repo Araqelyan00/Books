@@ -10,8 +10,8 @@ public class BookStorage {
     public void add(Book book){
         if(books.length == size){
             extend();
-            books[size++] = book;
         }
+        books[size++] = book;
     }
 
     private void extend(){
@@ -46,9 +46,9 @@ public class BookStorage {
         }
     }
 
-    public void printAllBooks(){
+    public void printBooks(){
         for(int i = 0; i < size; i++){
-            System.out.println(books[i]);
+            System.out.println(books[i].toString());
         }
         System.out.println();
     }

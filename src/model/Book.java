@@ -61,12 +61,10 @@ public class Book {
 
     @Override
     public String toString() {
-        return "Book{" +
-                "title='" + title + '\'' +
-                ", author=" + author +
-                ", price=" + price +
-                ", count=" + count +
-                ", genre='" + genre + '\'' +
-                '}';
+        return "Book :" + title + "\n" +
+                "Author :" + author.getName() + "\n" +
+                "Price :" + price + "\n" +
+                "Count :" + count + "\n" +
+                "Genre :" + genre ;
     }
 }
